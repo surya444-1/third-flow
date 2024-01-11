@@ -1,0 +1,35 @@
+name: My-firstflow
+on: push
+jobs: 
+    lint:
+      runs-on: ubuntu-latest
+      steps:
+        - name: get code from repo
+          uses: actions/checkout@v4
+        - name: Install-dependinces
+          run: npm ci 
+        - name: lint
+          run: npm run lint
+    test:
+      runs-on: ubuntu-latest
+      steps:
+        - name: get code from repo
+          uses: actions/checkout@v4
+        - name: Install-dependinces
+          run: npm ci 
+        - name: lint
+          run: npm run lint
+        - name: Test code
+          run: npm run test     
+    deploy: 
+      runs-on: ubuntu-latest
+      steps:
+        - name: get code from repo
+          uses: actions/checkout@v4
+        - name: Install-dependinces
+          run: npm ci 
+        - name: build code
+          run: npm run build
+        - name: deploy code
+          run: echo "Deploying code"
+        
