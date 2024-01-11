@@ -1,4 +1,4 @@
-name: My-firstflow
+name: My-secondflow
 on: push
 jobs: 
     lint:
